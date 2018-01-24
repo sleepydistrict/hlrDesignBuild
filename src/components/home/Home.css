@@ -1,0 +1,43 @@
+.App {
+  text-align: center;
+  font-family: 'Work Sans', sans-serif;
+}
+
+.Image {
+  background-image: url('./tools.jpg');
+  background-size: cover;
+  background-position: center center;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  bottom: 0;
+  height: 120vh;
+  z-index: -10;
+}
+
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 100px;
+  float: right;
+}
+
+.App-header {
+  background-color: #222;
+  height: 150px;
+  padding: 20px;
+  color: white;
+}
+
+.App-title {
+  font-size: 1.5em;
+}
+
+.App-intro {
+  font-size: large;
+  color: aliceblue;
+}
+
+@keyframes App-logo-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
