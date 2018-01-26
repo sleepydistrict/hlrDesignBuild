@@ -20,6 +20,10 @@ class Contact extends Component {
     console.log(event.target.value)
   }
 
+  handleSubmit(event) {
+    
+  }
+
   render() {
     console.log(this.state)
     return (
