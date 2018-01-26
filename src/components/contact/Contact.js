@@ -26,8 +26,9 @@ class Contact extends Component {
 
   render() {
     console.log(this.state)
-    return (
-      <div id='contact'>
+        
+        return (
+          <div id='contact'>
         <div className='Background'>
         </div>
         <Navbar />
