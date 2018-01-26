@@ -1,0 +1,13 @@
+.Background {
+  background-color:'black';
+  background-size: 'cover';
+  background-position: 'center center';
+  position: 'fixed';
+  width: '100%';
+  top: '0';
+  bottom: '0'; 
+}
+#contact {
+  text-align: center;
+  font-family: 'Work Sans', sans-serif;
+}
