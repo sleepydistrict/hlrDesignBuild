@@ -9,7 +9,8 @@ class Contact extends Component {
     this.state = {
       firstName: '',
       lastName: '',
-      email: ''
+      email: '',
+      message: ''
     }
     this.handleChange = this.handleChange.bind(this);
   }
@@ -20,7 +21,7 @@ class Contact extends Component {
   }
 
   render() {
-
+    console.log(this.state)
     return (
       <div id='contact'>
         <div className='Background'>
@@ -40,7 +41,7 @@ class Contact extends Component {
               <Form.Input type='text' label='Last Name' name="lastName" onChange={this.handleChange} value={this.state.lastName}/>
               <Form.Input type='text' label='Email' name="email" onChange={this.handleChange} value={this.state.email}/>
               </Form.Group>  
-              <Form.Field control={TextArea} label='Message' placeholder='Tell us more about you and how H.L.Rogers Design/Build can help you.' />
+              <Form.Field control={TextArea} label='Message' placeholder='Tell us more about you and how H.L.Rogers Design/Build can help you.' onChange={this.handleChange} />
               <Button type='submit' color='orange'>Submit</Button>
               {/* <Form.Field color='orange' control={Button}>Submit</Form.Field> */}
             </Form>
