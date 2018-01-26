@@ -2,10 +2,17 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import logo from '../../logo.svg';
 import './Home.css';
+import Navebar from '../../components/navbar/Navbar';
 import { Header, Button, Grid, Segment, Image, Icon } from 'semantic-ui-react';
 
 class Home extends Component {
-
+  constructor(props) {
+    super(props);
+    this.state= {
+      activeItem: 'name'
+    }
+  }
+  
   render() {
 
     var myDate = new Date();
@@ -24,6 +31,7 @@ class Home extends Component {
       <div className="App">
         <div className="Image">
         </div>
+        <Navebar />
           <h1 style={{color: 'white'}}>{greet} and welcome to</h1>
         <Header
           as='h1'
@@ -36,7 +44,7 @@ class Home extends Component {
         content='Where design/build meets sustainable thoughtful projects'
         />
         <Image src={logo} className="App-logo" alt="logo" centered />
-        <Segment style={{ padding: '19em 0em' }} vertical>
+        <Segment style={{ padding: '15em 0em' }} vertical>
           <Grid container columns={3}>
             <Grid.Row >
               <Grid.Column>

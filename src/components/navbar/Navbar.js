@@ -2,14 +2,18 @@ import React, { Component } from 'react';
 import { Menu } from 'semantic-ui-react';
 
 class Navbar extends Component {
-
-  state = { activeItem: 'name' }
+  constructor(props) {
+    super(props);
+    this.state= {
+      activeItem: 'name'
+    } 
+  }
 
   handleItemClick = (e, { name }) => this.setState({ activeItem: name })
 
   render() {
 
-    const { activeItem } = this.state
+    const activeItem = this.state.activeItem.name
 
     return (
       <Menu inverted widths={5}>
