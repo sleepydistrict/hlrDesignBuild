@@ -1,15 +1,25 @@
 import React, { Component } from 'react';
 import Navbar from '../../components/navbar/Navbar';
+import { Card } from 'semantic-ui-react';
+import './Build.css';
 
 class Build extends Component {
 
   render() {
 
     return (
-      <div style={{ backgroundColor:'black', backgroundSize: 'cover', backgroundPosition: 'center center', position: 'fixed', width: '100%', top: '0', bottom: '0' }}>
+      <div className='Build'>
+        <div className='BuildBackground'>
+        </div>
         <Navbar />
-        {/* <Navbar {this.state.activeItem} /> */}
-
+        <div id='header'>
+        <Card fluid>
+            <Card.Content>
+            
+            </Card.Content>
+          </Card> 
+        <h4 style={{color: 'white'}}>Photo by Hudson Hintze  on Unsplash</h4>
+        </div>
       </div>    
     )
   }

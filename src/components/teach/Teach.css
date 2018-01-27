@@ -1,0 +1,18 @@
+.Teach {
+  text-align: center;
+  font-family: 'Work Sans', sans-serif;
+}
+.TeachBackground {
+  background-image: url('./teach2.jpg');
+  background-size: cover;
+  background-position: center center;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  bottom: 0;
+  height: 120vh;
+  z-index: -10;
+}
+#header {
+  padding-top: 20em;
+}

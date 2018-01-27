@@ -1,7 +1,10 @@
 import React, { Component } from 'react';
 // import logo from '../../logo.svg';
-// import { Header, Button, Grid, Segment, Image } from 'semantic-ui-react';
+import { Card, Image, Reveal } from 'semantic-ui-react';
 import Navbar from '../../components/navbar/Navbar';
+import './Design.css';
+import design2 from './design2.jpg';
+import design3 from './design3.jpg';
 
 class Design extends Component {
   constructor(props) {
@@ -18,10 +21,26 @@ class Design extends Component {
     // const { activeItem } = this.state
 
     return (
-      <div style={{ backgroundColor:'black', backgroundSize: 'cover', backgroundPosition: 'center center', position: 'fixed', width: '100%', top: '0', bottom: '0' }}>
+      <div className='Design'>
+      <div className='DesignDB'>
+      </div>
       <Navbar />
       {/* <Navbar {this.state.activeItem} /> */}
-
+      <div id='header'>
+      <Card fluid>
+          <Card.Content>
+          <Reveal animated='small fade'>
+          <Reveal.Content visible>
+            <Image src={design2} />
+          </Reveal.Content>
+          <Reveal.Content hidden>
+            <Image src={design3} />
+          </Reveal.Content>
+          </Reveal>
+          </Card.Content>
+        </Card> 
+      <h4 style={{color: 'white'}}>Photo by Sergey Zolkin on Unsplash</h4>
+      </div>
       </div>
     );
   }

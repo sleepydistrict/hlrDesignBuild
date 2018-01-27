@@ -1,0 +1,21 @@
+.Design {
+  text-align: center;
+  font-family: 'Work Sans', sans-serif;
+}
+.DesignDB {
+  /* background-image: url('./design2.jpg'); */
+  /* background-image: url('./design3.jpg'); */
+  /* background-image: url('./design4.jpg'); */
+  background-image: url('./design5.jpg');
+  background-size: cover;
+  background-position: center center;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  bottom: 0;
+  height: 120vh;
+  z-index: -10;
+}
+#header {
+  padding-top: 20em;
+}
