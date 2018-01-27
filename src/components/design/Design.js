@@ -3,8 +3,8 @@ import React, { Component } from 'react';
 import { Card, Image, Reveal } from 'semantic-ui-react';
 import Navbar from '../../components/navbar/Navbar';
 import './Design.css';
-import design2 from './design2.jpg';
-import design3 from './design3.jpg';
+import design from './design.jpg';
+import buildAK3 from './buildAK3.jpg';
 
 class Design extends Component {
   constructor(props) {
@@ -29,14 +29,14 @@ class Design extends Component {
       <div id='header'>
       <Card fluid>
           <Card.Content>
-          <Reveal animated='small fade'>
-          <Reveal.Content visible>
-            <Image src={design2} />
-          </Reveal.Content>
-          <Reveal.Content hidden>
-            <Image src={design3} />
-          </Reveal.Content>
-          </Reveal>
+            <Reveal animated='small fade'>
+              <Reveal.Content visible>
+                <Image src={buildAK3} size='small'/>
+              </Reveal.Content>
+              <Reveal.Content hidden>
+                <Image src={design} size='small' floated='left' />
+              </Reveal.Content>
+            </Reveal>
           </Card.Content>
         </Card> 
       <h4 style={{color: 'white'}}>Photo by Sergey Zolkin on Unsplash</h4>

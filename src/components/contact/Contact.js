@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Navbar from '../../components/navbar/Navbar';
 import { Header, Card, Form, TextArea, Button } from 'semantic-ui-react';
 import './Contact.css';
-import NodeMailler from '../../dns/index';
+// import NodeMailler from '../../index.js';
 
 class Contact extends Component {
   constructor(props) {
@@ -14,7 +14,7 @@ class Contact extends Component {
       message: ''
     }
     this.handleChange = this.handleChange.bind(this);
-    console.log(NodeMailler);
+    // console.log(NodeMailler);
   }
 
   handleChange(event) {
