@@ -3,6 +3,12 @@ import Navbar from '../../components/navbar/Navbar';
 import { Header, Card, Form, TextArea, Button } from 'semantic-ui-react';
 import './Contact.css';
 
+const nodemailer = require('nodemailer');
+
+let transporter = nodemailer.createTransport({
+  service: 'gmail'
+})
+
 class Contact extends Component {
   constructor(props) {
     super(props);
@@ -21,8 +27,10 @@ class Contact extends Component {
   }
 
   handleSubmit(event) {
-    
+
   }
+
+
 
   render() {
     console.log(this.state)
@@ -48,7 +56,6 @@ class Contact extends Component {
               </Form.Group>  
               <Form.Field control={TextArea} label='Message' placeholder='Tell us more about you and how H.L.Rogers Design/Build can help you.' onChange={this.handleChange} />
               <Button type='submit' color='orange'>Submit</Button>
-              {/* <Form.Field color='orange' control={Button}>Submit</Form.Field> */}
             </Form>
           </Card.Content>
         </Card>  

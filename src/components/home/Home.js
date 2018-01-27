@@ -33,7 +33,7 @@ class Home extends Component {
         <Header 
         as='h1'
         inverted
-        content='Where design/build meets sustainable thoughtful projects'
+        content='Where design/build meets sustainable thoughtful process'
         />
         <Image src={logo} className="App-logo" alt="logo" centered />
         <Segment style={{ padding: '19em 0em' }} vertical>
