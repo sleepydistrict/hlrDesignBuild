@@ -5,15 +5,17 @@ class Navbar extends Component {
   constructor(props) {
     super(props);
     this.state= {
-      activeItem: 'name'
-    } 
+      activeItem: '' 
+    }
   }
 
-  handleItemClick = (e, { name }) => this.setState({ activeItem: name })
+  handleItemClick(event, data) {
+    this.setState({ activeItem: data.value })
+  } 
 
   render() {
 
-    const activeItem = this.state.activeItem.name
+    const activeItem = this.state
 
     return (
       <Menu inverted widths={5}>
