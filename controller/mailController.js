@@ -17,9 +17,9 @@ module.exports = {
             let mailOptions = {
                 from: req.body.email,//'"Fred Foo 👻" <sleepydistrict01@gmail.com>', // sender address
                 to: 'hlrwoodworking18@gmail.com', // list of receivers ///////////////This needs to go to Heidi//////////
-                subject: 'Hello ✔', // Subject line
-                text: 'Hello world?', // plain text body
-                html: req.body.message//'<b>Hello world?</b>' // html body
+                subject: 'A Message From Your Website', // Subject line
+                text: req.body.message, // plain text body
+                // html: req.body.message//'<b>Hello world?</b>' // html body
             };
             // send mail with defined transport object
             transporter.sendMail(mailOptions, (error, info) => {

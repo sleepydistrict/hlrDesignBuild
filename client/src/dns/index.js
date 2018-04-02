@@ -9,7 +9,7 @@ nodemailer.createTestAccount((err, account) => {
         host: 'smtp.gmail.com',
         auth: {
             user: 'sleepydistrict01@gmail.com', // generated ethereal user
-            pass: 'riley420'  // generated ethereal password
+            pass: ''  // generated ethereal password
         }
     });
 

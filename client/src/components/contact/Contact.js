@@ -3,6 +3,8 @@ import Navbar from '../../components/navbar/Navbar';
 import { Header, Card, Form, TextArea, Button } from 'semantic-ui-react';
 import './Contact.css';
 import axios from 'axios';
+import swal from 'sweetalert';
+
 class Contact extends Component {
   constructor(props) {
     super(props);
@@ -24,15 +26,19 @@ class Contact extends Component {
   
     axios.post('/contact/email', this.prepareOptions()).then((respone) => {
       console.log(respone);
+
       })
     .catch((error) => {
+      swal({
+        text: "I'm Sorry, Your Email Was Not Sent. The Server Must Be Offline. Please Try Again Later."
+      });
       console.log(error);
     });
   }
   
   prepareOptions(){
     const createEmail = {
-      firstName: this.state.email,
+      firstName: this.state.firstName,
       lastName: this.state.lastName,
       email: this.state.email,
       message: this.state.message
