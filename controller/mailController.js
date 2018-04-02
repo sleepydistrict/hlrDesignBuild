@@ -9,14 +9,14 @@ module.exports = {
             let transporter = nodemailer.createTransport({
                 host: 'smtp.gmail.com',
                 auth: {
-                    user: 'sleepydistrict01@gmail.com', // generated ethereal user
-                    pass: 'riley420'  // generated ethereal password
+                    user: 'hlrwoodworking18@gmail.com', // generated ethereal user
+                    pass: 'sadie406sue'  // generated ethereal password
                 }
             });
             // setup email data with unicode symbols
             let mailOptions = {
                 from: req.body.email,//'"Fred Foo 👻" <sleepydistrict01@gmail.com>', // sender address
-                to: 'sleepydistrict01@gmail.com', // list of receivers ///////////////This needs to go to Heidi//////////
+                to: 'hlrwoodworking18@gmail.com', // list of receivers ///////////////This needs to go to Heidi//////////
                 subject: 'Hello ✔', // Subject line
                 text: 'Hello world?', // plain text body
                 html: req.body.message//'<b>Hello world?</b>' // html body

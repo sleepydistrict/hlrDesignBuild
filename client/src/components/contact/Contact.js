@@ -2,8 +2,7 @@ import React, { Component } from 'react';
 import Navbar from '../../components/navbar/Navbar';
 import { Header, Card, Form, TextArea, Button } from 'semantic-ui-react';
 import './Contact.css';
-// import NodeMailler from '../../index.js';
-
+import axios from 'axios';
 class Contact extends Component {
   constructor(props) {
     super(props);
@@ -14,21 +13,34 @@ class Contact extends Component {
       message: ''
     }
     this.handleChange = this.handleChange.bind(this);
-    // console.log(NodeMailler);
+    
   }
-
   handleChange(event) {
     this.setState({ [event.target.name]: event.target.value });
     console.log(event.target.value)
   }
-
   handleSubmit(event) {
-    
-      }
-
+    event.preventDefault();
+  
+    axios.post('/contact/email', this.prepareOptions()).then((respone) => {
+      console.log(respone);
+      })
+    .catch((error) => {
+      console.log(error);
+    });
+  }
+  
+  prepareOptions(){
+    const createEmail = {
+      firstName: this.state.email,
+      lastName: this.state.lastName,
+      email: this.state.email,
+      message: this.state.message
+    }
+    return createEmail;
+  }
+  
   render() {
-    console.log(this.state)
-        
         return (
           <div className='Contact'>
         <div className='Background'>
@@ -60,5 +72,4 @@ class Contact extends Component {
     )
   }
 }
-
 export default Contact;
