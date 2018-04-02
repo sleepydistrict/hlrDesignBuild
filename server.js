@@ -4,20 +4,26 @@ const nodemailer = require('nodemailer');
 const bodyParser = require('body-parser')
 const http = require('http'); 
 const app = require("express")(); 
+
 app.use(bodyParser.json()) // handle json data
 app.use(bodyParser.urlencoded({ extended: true })) // handle URL-encoded data
 app.use(express.static(__dirname+'/public'));
+
 var server = require('http').Server(app);
+
 const router = express.Router();
+
 app.use(bodyParser.json({ type: 'application/json' }));
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(expressSession({ secret: "BigFish" }));
-if (process.env.NODE_ENV === 'production') {
-  app.use(express.static('./client/build'));
-} else {
-  app.use(express.static('public'));
-}
+  if (process.env.NODE_ENV === 'production') {
+    app.use(express.static('./client/build'));
+  } else {
+    app.use(express.static('public'));
+  }
+
 const port = process.env.PORT || 5000;
+
 var allowCrossDomain = function(req, res, next) {
   res.header('Access-Control-Allow-Origin', '*');
   res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE,OPTIONS');
@@ -33,12 +39,13 @@ var allowCrossDomain = function(req, res, next) {
   };
   
 app.use(allowCrossDomain);
+
 const mailController = require('./controller/mailController');
 //This was only used as a Test
 app.get('/api/hello', (req, res) => {
   res.send({ express: 'Hello From Express' });
 });
-//request -req
+//request - req
 //response - res
 router.post('/contact/email', mailController.sendMail);
 // app.post('/contact/email', (req, res) => {
@@ -55,5 +62,6 @@ router.post('/contact/email', mailController.sendMail);
 //   res.send({ express: req.body});
 // });
 app.use(router)
+
 //always at the end of functional code
 app.listen(port, () => console.log(`Listening on port ${port}`));

@@ -24,9 +24,8 @@ class Contact extends Component {
   handleSubmit(event) {
     event.preventDefault();
   
-    axios.post('/contact/email', this.prepareOptions()).then((respone) => {
-      console.log(respone);
-
+    axios.post('/contact/email', this.prepareOptions()).then((response) => {
+      console.log(response);
       })
     .catch((error) => {
       swal({
