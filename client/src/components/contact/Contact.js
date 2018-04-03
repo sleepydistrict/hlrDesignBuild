@@ -21,10 +21,12 @@ class Contact extends Component {
     this.setState({ [event.target.name]: event.target.value });
     console.log(event.target.value)
   }
+  
   handleSubmit(event) {
     event.preventDefault();
   
     axios.post('/contact/email', this.prepareOptions()).then((response) => {
+      swal({text: "Message Sent"})
       console.log(response);
       })
     .catch((error) => {
@@ -47,7 +49,7 @@ class Contact extends Component {
   
   render() {
         return (
-          <div className='Contact'>
+          <div className='contact'>
         <div className='Background'>
         </div>
         <Navbar />

@@ -45,22 +45,9 @@ const mailController = require('./controller/mailController');
 app.get('/api/hello', (req, res) => {
   res.send({ express: 'Hello From Express' });
 });
-//request - req
-//response - res
+
 router.post('/contact/email', mailController.sendMail);
-// app.post('/contact/email', (req, res) => {
-//   //console.log(response);
-//   var data = {
-//     firstName: req.body.firstName,
-//     lastName: req.body.lastName,
-//     email: req.body.email,
-//     message: req.body.message
-//   };
-//   if(req.body){
-//     console.log(req.body.firstName);
-//   }
-//   res.send({ express: req.body});
-// });
+
 app.use(router)
 
 //always at the end of functional code

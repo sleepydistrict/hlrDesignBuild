@@ -19,11 +19,10 @@ module.exports = {
             });
             // setup email data with unicode symbols
             let mailOptions = {
-                from: req.body.email, // sender address
                 to: 'hlrwoodworking18@gmail.com', // list of receivers 
                 subject: 'A Message From Your Website', // Subject line
                 html: `
-                <p>You have a new message</p>
+                <p>You have a new message from</p>
                 <ul>
                   <li>First Name: ${req.body.firstName}</li>
                   <li>Last Name: ${req.body.lastName}</li>
@@ -40,7 +39,7 @@ module.exports = {
                 }
                 console.log('Message sent: %s', info.messageId);
                 console.log('Preview URL: %s', nodemailer.getTestMessageUrl(info));
-                res.render('contact', swal({text: 'Meassage Sent'}))
+                res.render('contact')
             });
         });
     }
