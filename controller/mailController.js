@@ -5,7 +5,7 @@ module.exports = {
         console.log(req.body);
         // Generate test SMTP service account from ethereal.email
         // Only needed if you don't have a real mail account for testing
-        nodemailer.createTestAccount((err, account) => {
+        // nodemailer.createTestAccount((err, account) => {
             // create reusable transporter object using the default SMTP transport
             let transporter = nodemailer.createTransport({
                 host: 'smtp.gmail.com',
@@ -41,7 +41,7 @@ module.exports = {
                 console.log('Preview URL: %s', nodemailer.getTestMessageUrl(info));
                 res.render('contact')
             });
-        });
+        // });
     }
     
 }
