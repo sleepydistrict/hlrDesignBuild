@@ -7,14 +7,19 @@ module.exports = {
         // Only needed if you don't have a real mail account for testing
         // nodemailer.createTestAccount((err, account) => {
             // create reusable transporter object using the default SMTP transport
+           
             let transporter = nodemailer.createTransport({
                 host: 'smtp.gmail.com',
+                port: 465,
+                secure: true,
                 auth: {
-                    user: 'hlrwoodworking18@gmail.com', // generated ethereal user
-                    pass: 'sadie406sue'  // generated ethereal password
-                },
-                tls:{
-                    rejectUnauthorized:false
+                  type: 'OAuth2',
+                  user:config.user,
+                  clientId:"229075776653-7d4kgcpl6u15akim23eee2ktdjpttgdh.apps.googleusercontent.com",
+                  clientSecret:"_CociXgKbcmiyLv5W3j8K175",
+                  refreshToken:"1/nQRDIjIBCPtoODAso8WmG_R23IW2gzGeSq9FUbBVo_k",
+                  accessToken: "ya29.GluTBYSYGwj0m-CyH4uvTzEOmw1xuaYuQsY5DTGGwQX5wK7xdCVQfj7GdNHdH79nZxpsmKzPW9Xi-2dgI5geTN5_LqD21qLglvQEkF6BWLdnAPWMsNb-Qgdn9eR1",
+                  expires: 1484314697598
                 }
             });
             // setup email data with unicode symbols
