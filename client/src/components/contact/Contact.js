@@ -2,8 +2,17 @@ import React, { Component } from 'react';
 import Navbar from '../../components/navbar/Navbar';
 import { Header, Card, Form, TextArea, Button } from 'semantic-ui-react';
 import './Contact.css';
-import axios from 'axios';
-import swal from 'sweetalert';
+// import axios from 'axios';
+// import swal from 'sweetalert';
+
+var path    = require('path'); // used to resolve relative paths
+
+var sendemail   = require('sendemail'); // no api key
+var email = sendemail.email;
+
+var dir = __dirname + '/client/src/templates'; // unresolved
+dir = path.resolve(dir);
+sendemail.set_template_directory(dir);
 
 class Contact extends Component {
   constructor(props) {
@@ -24,28 +33,21 @@ class Contact extends Component {
   
   handleSubmit(event) {
     event.preventDefault();
-  
-    axios.post('/contact/email', this.prepareOptions()).then((response) => {
-      swal({text: "Message Sent"})
-      console.log(response);
-      })
-    .catch((error) => {
-      swal({
-        text: "I'm Sorry, Your Email Was Not Sent. The Server Must Be Offline. Please Try Again Later."
-      });
-      console.log(error);
-    });
-  }
-  
-  prepareOptions(){
-    const createEmail = {
+    var contactForm = {
       firstName: this.state.firstName,
       lastName: this.state.lastName,
       email: this.state.email,
-      message: this.state.message
+      subject:"A Message From Your Website",
+      message: this.state.message,
     }
-    return createEmail;
+    email('contact', contactForm, function(error, result){
+      console.log(' - - - - - - - - - - - - - - - - - - - - -> email sent: ');
+      console.log(result);
+      console.log(' - - - - - - - - - - - - - - - - - - - - - - - - - - - -')
+    })
   }
+
+
   
   render() {
         return (
